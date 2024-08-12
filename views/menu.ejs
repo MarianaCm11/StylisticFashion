@@ -1,0 +1,96 @@
+<%- include("templates/encabezado")%>
+<script src="js/scriptmenu.js" defer></script>
+    <link rel="stylesheet" href="/css/styles2.css">
+    <title>Inicio</title>
+</head>
+<header>
+    <a href="#" class="logo">Stylistic Fashion<span>.</span></a>
+    <!-- <div class="icons">
+        <a href="#" class="fas user" id="fas-user"><i class="fa-solid fa-user"></i></a>
+        <div id="sidebar" class="sidebar">
+            <button id="closeButton" class="close-button"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="sidebar-header">Mi Perfil</h2>
+            <img src="/img/usu2.jpg" alt="Imagen de ejemplo" class="sidebar-img">
+            <ul>
+                <li><a href="/inicio"><i class="fa-solid fa-user-plus"></i> Registro</a></li>
+                <li><a href="/favoritos"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
+            </ul>
+        </div>
+    </div> -->
+
+</header>
+
+<body>
+    <section class="home" id="home">
+        <div class="content">
+            <h3>¿Cuál es el look de hoy?</h3>
+            <p>La elección de nuestro estilo de vestir es una expresión personal que refleja nuestra identidad,
+                gustos y valores. A través de la ropa, comunicamos mensajes sobre quiénes somos, cómo nos sentimos
+                y cómo deseamos ser percibidos por los demás. Además, el estilo de vestir puede influir en nuestra
+                confianza y estado de ánimo, convirtiéndose en una herramienta poderosa para proyectar seguridad y
+                autenticidad en nuestras interacciones diarias.</p>
+            <a href="/inicio" class="btn-des">Descrubramoslo</a>
+        </div>
+        <button class="scroll-btn" onclick="scrollToFooter()">
+            <svg
+                class="w-5 h-5"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M19.5 13.5L12 21m0 0L4.5 13.5M12 21V3"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                ></path>
+            </svg>
+        </button>
+    </section>
+    
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col2">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><img src="/img/sf.png" alt=""></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Integrantes del equipo</h4>
+                    <ul>
+                        <li>Mariana Guadalupe Cano Márquez</li>
+                        <li>Alondra Daniela Sanchez Domínguez</li>
+                        <li>Hector Coronel Limias</li>
+                        <li>Edgar Ortega Cabrera</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Diseñadora de la pagina web:</h4>
+                    <ul>
+                        <li>Mariana Guadalupe</li>
+                        <li>Cano Márquez</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>¡Siguienos!</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61564024883201"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/StylisticF"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/stylisticfashionmx?utm_source=qr&igsh=b29vNDFyZGdoMGkx"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Proyecto</h4>
+                    <ul>
+                        <li>Merveilleux</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <%- include("templates/pie")%>

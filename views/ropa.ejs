@@ -1,0 +1,96 @@
+<%- include("templates/encabezado")%>
+  <script src="js/scriptmenu.js" defer></script>
+  <link rel="stylesheet" href="/css/styles2.css">
+  <title>Inicio</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">Stylistic Fashion<span>.</span></a>
+      <div class="icons">
+        <a href="#" class="fas user" id="fas-user"><i class="fa-solid fa-user"></i></a>
+        <div id="sidebar" class="sidebar">
+          <button id="closeButton" class="close-button"><i class="fa-solid fa-xmark"></i></button>
+          <h2 class="sidebar-header">Mi Perfil</h2>
+          <% if (usuario) { %>
+            <img src="<%= usuario.foto || '/img/usu2.jpg' %>" alt="Foto de perfil" class="sidebar-img">
+        <% } else { %>
+            <img src="/img/usu2.jpg" alt="Imagen de perfil" class="sidebar-img">
+        <% } %>
+          <ul>
+            <li><a href="/inicio"><i class="fa-solid fa-user-plus"></i> Registro</a></li>
+            <li><a href="/favoritos"><i class="fa-solid fa-heart"></i> Favoritos</a></li>
+            <% if (usuario) { %>
+              <li><a href="/editar-perfil/<%= usuario.id %>" id="editar-perfil-btn"><i class="fa-solid fa-user-pen"></i> Editar perfil</a></li>
+          <% } %>
+            <li><a href="/"><i class="fa-solid fa-xmark"></i> Cerrar Seción</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="body2">
+      <div class="wrapper">
+        <div class="fijado">
+          <div class="buscar">
+            <input type="search" placeholder="Buscar" id="search-input" />
+            <div class="btn-buscar" id="search">
+              <i class="fas fa-search icon"></i>
+            </div>
+          </div>
+          <div class="checkboxes">
+            <div class="checkbox-group">
+              <span class="checkbox-label">Categoría</span>
+              <div class="checkbox-wrapper-46">
+                <input type="checkbox" id="clima-checkbox" class="inp-cbx" onclick="toggleCategory('clima')" />
+                <label for="clima-checkbox" class="cbx"><span><svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg></span><span>Clima</span></label>
+              </div>
+
+              <div class="checkbox-wrapper-46">
+                <input type="checkbox" id="evento-checkbox" class="inp-cbx" onclick="toggleCategory('evento')" />
+                <label for="evento-checkbox" class="cbx"><span><svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg></span><span>Evento</span></label>
+              </div>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="checkbox-group">
+              <span class="checkbox-label">Género</span>
+              <div class="checkbox-wrapper-46">
+                <input type="checkbox" id="hombre-checkbox" class="inp-cbx" onclick="filterProduct(currentCategory)" />
+                <label for="hombre-checkbox" class="cbx"><span><svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg></span><span>Hombre</span></label>
+              </div>
+              <div class="checkbox-wrapper-46">
+                <input type="checkbox" id="mujer-checkbox" class="inp-cbx" onclick="filterProduct(currentCategory)" />
+                <label for="mujer-checkbox" class="cbx"><span><svg viewBox="0 0 12 10" height="10px" width="12px">
+                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg></span><span>Mujer</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="button-value active" onclick="filterProduct('Todo')">Todo</button>
+            <button class="button-value clima-button" onclick="filterProduct('Soleado')">Soleado</button>
+            <button class="button-value clima-button" onclick="filterProduct('Frio')">Frio</button>
+            <button class="button-value evento-button" onclick="filterProduct('Informal')">Informal</button>
+            <button class="button-value evento-button" onclick="filterProduct('Formal')">Formal</button>
+          </div>
+
+        </div>
+        <div id="products">
+          <!-- Productos -->
+        </div>
+        <div id="message-box" class="message-box"></div> <!-- Nuevo div para mostrar mensajes -->
+
+      </div>
+
+
+
+      <%- include("templates/pie")%>

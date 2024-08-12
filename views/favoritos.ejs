@@ -1,0 +1,27 @@
+<%- include("templates/encabezado")%>
+  <title>Favoritos</title>
+  <link rel="stylesheet" href="/css/styles2.css">
+  </head>
+  <header>
+    <div class="header-fav">
+      <a href="#" class="logo-fav">Favoritos<span>.</span></a>
+    </div>
+  </header>
+
+  <body class="body3">
+      <div id="fav-container">
+        <!-- Contenedor para los elementos favoritos -->
+      </div>
+      <button class="vaciar" onclick="clearFavorites()">Vaciar Favoritos</button>
+
+      <!-- Ícono de eliminar utilizado en el script -->
+      <template id="delete-icon-template">
+        <button class="delete-icon"><i class="fas fa-trash"></i></button>
+      </template>
+      <a href="/ropa">
+        <button id="regresar-btn" class="btn"> <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </a>
+    <script src="js/favorites.js"></script>
+
+    <%- include("templates/pie")%>

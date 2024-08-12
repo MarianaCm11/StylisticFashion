@@ -1,0 +1,52 @@
+<%- include("templates/encabezado")%>
+<title>Editar Perfil</title>
+    <link rel="stylesheet" href="/css/styles2.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<header>
+    <div class="header-fav">
+      <a href="#" class="logo-fav">Editar perfil<span>.</span></a>
+    </div>
+  </header>
+  
+<body class="bodyedit">
+        <% if (usuario && usuario.foto) { %>
+            <div class="profile-picture">
+                <img src="<%= usuario.foto %>" alt="Foto de perfil">
+            </div>
+        <% } else { %>
+            <div class="profile-picture">
+                <img src="/img/usu2.jpg" alt="Foto de perfil">
+            </div>
+        <% } %>
+
+        <h2 class="create-account">Actualiza tu información personal</h2>
+        <form id="formulario-editar" class="formulario-editar" action="/editar-perfil/<%= usuario.id %>" method="POST" enctype="multipart/form-data">
+            <div class="contenedor-input">
+                <i class="icono fas fa-user"></i>
+                <input type="text" name="usuario" value="<%= usuario.usuario %>" required>
+                <label for="usuario">Usuario</label>
+            </div>
+            <div class="contenedor-input">
+                <i class="icono fas fa-envelope"></i>
+                <input type="email" name="correo" value="<%= usuario.correo %>" required>
+                <label for="correo">Correo</label>
+            </div>
+            <div class="contenedor-input">
+                <i class="icono fas fa-lock"></i>
+                <input type="password" name="contrasena" placeholder="Nueva contraseña">
+                <label for="contrasena">Contraseña</label>
+            </div>
+            <div class="contenedor-input">
+                <i class="icono fas fa-image"></i>
+                <input type="file" name="foto">
+                <label for="foto">Foto</label>
+            </div>
+            <button type="submit" class="btn">Actualizar Perfil</button>
+        </form>
+    </div>
+    <a href="/ropa">
+        <button id="regresar-btn" class="btn"> <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </a>
+<%- include("templates/pie")%>
